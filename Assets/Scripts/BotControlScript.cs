@@ -16,8 +16,11 @@ public class BotControlScript : MonoBehaviour
 	public float animSpeed = 1.5f;				// a public setting for overall animator animation speed
 	public float lookSmoother = 3f;				// a smoothing setting for camera motion
 	public bool useCurves;						// a setting for teaching purposes to show use of curves
+	public float minimumFallingHeight = 0.5f;	// If the character is mid-air over this height, the falling flag will be set
 
-	
+	public bool downRayHit = false;
+	public float heightAboveGround = 0f;
+
 	private Animator anim;							// a reference to the animator on the character
 	private AnimatorStateInfo currentBaseState;			// a reference to the current state of the animator, used for base layer
 	private AnimatorStateInfo layer2CurrentState;	// a reference to the current state of the animator, used for layer 2
@@ -57,6 +60,31 @@ public class BotControlScript : MonoBehaviour
 		if(anim.layerCount ==2)		
 			layer2CurrentState = anim.GetCurrentAnimatorStateInfo(1);	// set our layer2CurrentState variable to the current state of the second Layer (1) of animation
 		
+		// Check if we are falling
+		// Raycast down from the center of the character.. 
+		Ray downRay = new Ray(transform.position + Vector3.up, -Vector3.up);
+		RaycastHit downHitInfo = new RaycastHit();
+
+		//bool downRayHit = Physics.Raycast(downRay, out downHitInfo);
+		downRayHit = Physics.Raycast(downRay, out downHitInfo);
+		heightAboveGround = 0f;
+		if (downRayHit)
+		{
+			heightAboveGround = downHitInfo.distance;
+			if (heightAboveGround > minimumFallingHeight)
+			{
+				anim.SetBool("Falling", true);
+			}
+			else
+			{
+				anim.SetBool("Falling", false);
+			}
+		}
+		else
+		{
+			anim.SetBool("Falling", false);
+		}
+
 		
 		// LOOK AT ENEMY
 		
@@ -98,22 +126,22 @@ public class BotControlScript : MonoBehaviour
 				anim.SetBool("Jump", false);
 			}
 			
-			// Raycast down from the center of the character.. 
-			Ray ray = new Ray(transform.position + Vector3.up, -Vector3.up);
-			RaycastHit hitInfo = new RaycastHit();
+			//// Raycast down from the center of the character.. 
+			//Ray ray = new Ray(transform.position + Vector3.up, -Vector3.up);
+			//RaycastHit hitInfo = new RaycastHit();
 			
-			if (Physics.Raycast(ray, out hitInfo))
-			{
-				// ..if distance to the ground is more than 1.75, use Match Target
-				if (hitInfo.distance > 1.75f)
-				{
+			//if (Physics.Raycast(ray, out hitInfo))
+			//{
+			//	// ..if distance to the ground is more than 1.75, use Match Target
+			//	if (hitInfo.distance > 1.75f)
+			//	{
 					
-					// MatchTarget allows us to take over animation and smoothly transition our character towards a location - the hit point from the ray.
-					// Here we're telling the Root of the character to only be influenced on the Y axis (MatchTargetWeightMask) and only occur between 0.35 and 0.5
-					// of the timeline of our animation clip
-					anim.MatchTarget(hitInfo.point, Quaternion.identity, AvatarTarget.Root, new MatchTargetWeightMask(new Vector3(0, 1, 0), 0), 0.35f, 0.5f);
-				}
-			}
+			//		// MatchTarget allows us to take over animation and smoothly transition our character towards a location - the hit point from the ray.
+			//		// Here we're telling the Root of the character to only be influenced on the Y axis (MatchTargetWeightMask) and only occur between 0.35 and 0.5
+			//		// of the timeline of our animation clip
+			//		anim.MatchTarget(hitInfo.point, Quaternion.identity, AvatarTarget.Root, new MatchTargetWeightMask(new Vector3(0, 1, 0), 0), 0.35f, 0.5f);
+			//	}
+			//}
 		}
 		
 		
