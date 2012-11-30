@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ThirdPersonCamera : MonoBehaviour
+public class VostopiaThirdPersonCamera : MonoBehaviour
 {
 	public float distanceAway;			// distance from the back of the craft
 	public float distanceUp;			// distance above the craft
