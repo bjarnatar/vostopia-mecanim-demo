@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: base_avatar_offset_f_clip
+  serializedVersion: 3
+  m_Compressed: 0
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1.73472306e-18, y: 2.575718e-18, z: 6.93889225e-18, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 1768969055
+      - time: .0333333351
+        value: {x: 1.73472306e-18, y: 2.575718e-18, z: 6.93889225e-18, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 485714
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Reference/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1.49949343e-24, y: -8.89879116e-17, z: 1.36617746e-32, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 1768969055
+      - time: .0333333351
+        value: {x: 1.49949343e-24, y: -8.89879116e-17, z: 1.36617746e-32, w: 1}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 484965
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Reference/Hips/Spine/Spine1/Spine2/Spine3/RightShoulder/RightArm
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -.138470098, y: -.0137951691, z: -.0391068682}
+        inSlope: {x: 1.8411026, y: -1.38777865e-16, z: -5.55111459e-16}
+        outSlope: {x: 1.8411026, y: -1.38777865e-16, z: -5.55111459e-16}
+        tangentMode: 0
+      - time: .0333333351
+        value: {x: -.0771000013, y: -.0137951691, z: -.0391068682}
+        inSlope: {x: 1.84110379, y: -5.94762316e-17, z: -2.37904926e-16}
+        outSlope: {x: 1.84110379, y: -5.94762316e-17, z: -2.37904926e-16}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Reference/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: .138470098, y: -.0137998993, z: -.0391068682}
+        inSlope: {x: -1.8411026, y: -0, z: -5.55111459e-16}
+        outSlope: {x: -1.8411026, y: -0, z: -5.55111459e-16}
+        tangentMode: 808476492
+      - time: .0333333351
+        value: {x: .0771000013, y: -.0137998993, z: -.0391068682}
+        inSlope: {x: -1.84110379, y: -0, z: -2.37904926e-16}
+        outSlope: {x: -1.84110379, y: -0, z: -2.37904926e-16}
+        tangentMode: 2139095040
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Reference/Hips/Spine/Spine1/Spine2/Spine3/RightShoulder/RightArm
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 603843060
+      - time: .0333333351
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Reference/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: .0333333351
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Reference/Hips/Spine/Spine1/Spine2/Spine3/RightShoulder/RightArm
+  m_FloatCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events: []
+--- !u!1002 &7400001
+EditorExtensionImpl:
+  serializedVersion: 6

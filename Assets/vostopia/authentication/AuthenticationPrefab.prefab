@@ -1,0 +1,394 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: AuthNewUser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400002}
+  - 114: {fileID: 11400002}
+  m_Layer: 0
+  m_Name: AuthDidYouKnow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400004}
+  - 114: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: AuthNewGuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400006}
+  - 114: {fileID: 11400008}
+  m_Layer: 0
+  m_Name: AuthUserSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400008}
+  - 114: {fileID: 11400010}
+  m_Layer: 0
+  m_Name: AuthSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400010}
+  - 114: {fileID: 11400012}
+  m_Layer: 0
+  m_Name: AuthEmail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400012}
+  - 114: {fileID: 11400014}
+  m_Layer: 0
+  m_Name: AuthPassword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &100306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400306}
+  - 114: {fileID: 11400006}
+  m_Layer: 0
+  m_Name: AuthenticationPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400006
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400008
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400010
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400012
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400306}
+--- !u!4 &400306
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_Children:
+  - {fileID: 400002}
+  - {fileID: 400010}
+  - {fileID: 400000}
+  - {fileID: 400012}
+  - {fileID: 400006}
+  - {fileID: 400008}
+  - {fileID: 400004}
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a243251b42274a8d9b2982e0da845d7, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .349999994}
+  DidYouKnowState: {fileID: 11400002}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609f0502a354946d2a3bd968f6c95b99, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .349999994}
+  VostopiaLogo: gui_vostopia_logo
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1f8105f88ef45f0ad68b6246c4e997, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .349999994}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adeaa37aa29784c669edcbefeef54030, type: 1}
+  m_Name: 
+  TransitionDuration: .200000003
+  SpinnerTextures:
+  - {fileID: 2800000, guid: 3086adc7a13364675a8c9322f949b854, type: 1}
+  - {fileID: 2800000, guid: 33143a1736edd4d61ba2a6c968d7fe21, type: 1}
+  - {fileID: 2800000, guid: aee3359ff93fd4b27aac480c053d7c38, type: 1}
+  - {fileID: 2800000, guid: 35ecc19167bd0416eb66107ddc43cd95, type: 1}
+  SpinnerFrameRate: 10
+  TransitionAudioClip: {fileID: 8300000, guid: 2393a757334aa48658de771adab003f5, type: 1}
+  TransitionAudioVolume: 1
+  ScreenSizes:
+  - MinimumResolution: 320
+    ScreenMultiplier: 1
+    Textures:
+    - {fileID: 2800000, guid: a3187838da38f4db28bf1eadaa7c4a8f, type: 1}
+    - {fileID: 2800000, guid: 215d4a2cffb9e4081981525ca4bda391, type: 1}
+    - {fileID: 2800000, guid: 25e2800534c7042af9cead87de41d4b9, type: 1}
+    - {fileID: 2800000, guid: a62c4f1551fe84aecb2339fce1192307, type: 1}
+    Skin: {fileID: 11400000, guid: 68c17c426eab245ab9ef43299a87b6c5, type: 2}
+  - MinimumResolution: 640
+    ScreenMultiplier: 2
+    Textures:
+    - {fileID: 2800000, guid: b321c4dfdd31e4466a1b0c2af926daba, type: 1}
+    - {fileID: 2800000, guid: 12b6b5fdc162a4fcfb546eb2ec63354d, type: 1}
+    - {fileID: 2800000, guid: 838296ec0c39a44498413e7ee05b90f8, type: 1}
+    - {fileID: 2800000, guid: d345ee5db07194b748f487291cfd9c10, type: 1}
+    Skin: {fileID: 11400000, guid: 1eac2410d8d734fbdb22a480042b641a, type: 2}
+  CurrentScreenSize:
+    MinimumResolution: 320
+    ScreenMultiplier: 1
+    Textures: []
+    Skin: {fileID: 0}
+  ConnectOnStart: 1
+  AuthenticationSelectorScreen: {fileID: 11400010}
+  UserSelectorScreen: {fileID: 11400008}
+  PasswordScreen: {fileID: 11400014}
+  AuthenticationSettings:
+    Mode: 0
+    UIVolume: 1
+    AuthenticationToken: 
+  EnableGooglePayments: 1
+  GooglePaymentsSandbox: 0
+  Settings: {fileID: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb70da951230448ac8112c4f9a46567f, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .349999994}
+  VostopiaLogo: gui_vostopia_logo
+  ProfilePictureFrame: icon_profile_pic_frame
+  ProfilePictureBackground: icon_profile_pic_background
+  ProfilePictureMissing: icon_profile_pic_missing
+  AuthSelectorScreen: {fileID: 11400010}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108037135cb81401a86f12e7ae41ee5e, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .349999994}
+  EmailState: {fileID: 11400012}
+  GuestState: {fileID: 11400004}
+  VostopiaLogo: gui_vostopia_logo
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433a32d8f559045b2a8ddfabbe6ce6cf, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .352941185}
+  PasswordState: {fileID: 11400014}
+  NewUserState: {fileID: 11400000}
+  VostopiaLogo: gui_vostopia_logo
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a71bb9394904144a4300db502b2812, type: 1}
+  m_Name: 
+  WindowBackground: {r: .469999999, g: .779999971, b: .349999994, a: 1}
+  ScreenShade: {r: 0, g: 0, b: 0, a: .5}
+  ShadowColor: {r: 0, g: 0, b: 0, a: .349999994}
+  VostopiaLogo: gui_vostopia_logo
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100306}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1
