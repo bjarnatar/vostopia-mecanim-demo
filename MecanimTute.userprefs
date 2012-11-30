@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ThirdPersonCamera.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ThirdPersonCamera.cs" Line="34" Column="3" />
+      <File FileName="Assets/Scripts/LaserEyes.cs" Line="63" Column="32" />
+      <File FileName="Assets/Scripts/AnimTriggers.cs" Line="26" Column="7" />
+      <File FileName="Assets/Scripts/BotControlScript.cs" Line="66" Column="123" />
+      <File FileName="../../MecanimTute/Assets/Scripts/BotControlScript.cs" Line="66" Column="123" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
