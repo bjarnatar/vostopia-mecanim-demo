@@ -1,0 +1,32 @@
+Getting Started with Vostopia + Photon Cloud Demo
+=================================================
+
+The Vostopia + Photon Cloud demo demonstrates the integration of vostopia
+avatars with photon cloud to create a multiplayer chat room with avatars.
+
+In order to run this demo, you must sign up for both an exitgames account
+and a vostopia developer account.
+
+
+Getting Started
+---------------
+
+1) Set up photon cloud by completing the PUN Setup Wizard that opens when you 
+   open the project in Unity. 
+2) Open the scene Assets/Demo/BootScene.unity
+3) On the VostopiaApiController, set up Game Id and API Key, or click on
+   "Register Game" to set up your vostopia developer account.
+4) For more graphical awesomeness, set "Rendering Path" to "Deferred" in 
+   Edit->Project Settings->Player
+4) Hit Play!
+
+
+Documentation
+-------------
+
+- See documentation.pdf for a description of the various components of this demo
+- See https://vostopia.com/developer for documentation and samples for integrating
+  the vostopia avatar system in your game
+- See http://cloud.exitgames.com/ for documentation and samples for using photon cloud
+  to enable multiplayer support in your game
+
