@@ -15,11 +15,11 @@ public class PlayerNetwork : Photon.MonoBehaviour
         if (photonView.isMine)
         {
             //MINE: local player, simply enable the local scripts
-            controllerScript.enabled = true;
+            //controllerScript.enabled = true;
         }
         else
         {
-            controllerScript.enabled = false;
+            //controllerScript.enabled = false;
         }
 
         gameObject.name = gameObject.name + photonView.viewID.ID;

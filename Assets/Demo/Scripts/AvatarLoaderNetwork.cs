@@ -4,11 +4,13 @@ using System.Collections;
 [RequireComponent(typeof(AvatarLoadingController))]
 public class AvatarLoaderNetwork : Photon.MonoBehaviour
 {
-    private AvatarLoadingController mLoadingController;
+	private AvatarLoaderUserId mLoaderUserId;
+	private bool haveAskedToLoadAvatar = false;
+	private string avatarUserId = "";
 
     void Awake()
     {
-        mLoadingController = GetComponent<AvatarLoadingController>();
+		mLoaderUserId = GetComponent<AvatarLoaderUserId>();
     }
 
     // Use this for initialization
@@ -16,35 +18,33 @@ public class AvatarLoaderNetwork : Photon.MonoBehaviour
     {
         if(photonView.isMine)
         {
-            mLoadingController.SetDefaultOutfit("");
+			avatarUserId = VostopiaClient.Authentication.ActiveUser.Id;
         }
     }
 
-    public void LoadAvatar()
-    {
-        
-    }
+	public void Update()
+	{
+		if (!haveAskedToLoadAvatar && !avatarUserId.Equals(""))
+		{
+			Debug.Log("Loading Avatar: " + avatarUserId);
+			mLoaderUserId.UserId = avatarUserId;
+			mLoaderUserId.LoadAvatar();
+			haveAskedToLoadAvatar = true;
+		}
+	}
 
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        //Debug.Log(string.Format("OnPhotonSerializeView {0}", name));
-
         if (stream.isWriting)
         {
             string userId = VostopiaClient.Authentication.ActiveUser.Id;
-            //Debug.Log(string.Format("Sending UserId {0}", userId),this);
-            
-            //We own this player: send the others our data
+
+			//We own this player: send the others our data
             stream.SendNext(userId);
         }
         else
         {
-            //Network player, receive data
-            //controllerScript._characterState = (CharacterState)(int)stream.ReceiveNext();
-            string userId = (string)stream.ReceiveNext();
-            Debug.Log(string.Format("Recevieved User Id {0}", userId), this);
-            mLoadingController.SetDefaultOutfit(userId);
+			avatarUserId = (string)stream.ReceiveNext();
         }
     }
-
 }

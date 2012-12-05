@@ -46,6 +46,16 @@ public class LevelLogic : Photon.MonoBehaviour
 	
 	}
 
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //Debug.Log(string.Format("OnPhotonSerializeView {0}", name));
+
+//		if (stream.isWriting)
+//		{ 
+//		}
+
+	}
+
     void OnGUI()
     {
         GUI.skin = GUISkin;

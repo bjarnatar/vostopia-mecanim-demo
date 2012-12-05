@@ -164,8 +164,9 @@ public class Menu : Photon.MonoBehaviour {
                         selected = GUILayout.Toggle(selected, string.Format("{0} {1}/{2}", room.name, room.playerCount, room.maxPlayers));
                         if (selected)
                         {
-							mSelectedRoom = PhotonNetwork.room;
+							mSelectedRoom = room;
                             mSelectedRoomIndex = i;
+							Debug.Log("Selected room name: " + mSelectedRoom.name + ", index: " + mSelectedRoomIndex);
                         }
                     }
                 }
