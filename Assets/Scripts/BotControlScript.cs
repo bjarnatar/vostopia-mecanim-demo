@@ -160,13 +160,15 @@ public class BotControlScript : Photon.MonoBehaviour
 			{
 				if (Input.GetButtonUp("Jump"))
 				{
-					anim.SetBool("Wave", true);
+					netWave = true;
+					//anim.SetBool("Wave", true);
 				}
 			}
 			// if we enter the waving state, reset the bool to let us wave again in future
 			if (layer2CurrentState.nameHash == waveState)
 			{
-				anim.SetBool("Wave", false);
+				netWave = false;
+				//anim.SetBool("Wave", false);
 			}
 		}
 		else
