@@ -20,8 +20,11 @@ public class BotControlScript : Photon.MonoBehaviour
 	public bool useCurves;						// a setting for teaching purposes to show use of curves
 	public float minimumFallingHeight = 0.5f;	// If the character is mid-air over this height, the falling flag will be set
 
-	public bool downRayHit = false;
-	public float heightAboveGround = 0f;
+	private bool downRayHit = false;
+	private float heightAboveGround = 0f;
+
+	private float startingColliderHeight = 2f;
+	private float startingColliderY = 1f;
 
 	private Animator anim;							// a reference to the animator on the character
 	private AnimatorStateInfo currentBaseState;			// a reference to the current state of the animator, used for base layer
@@ -52,6 +55,8 @@ public class BotControlScript : Photon.MonoBehaviour
 		enemy = GameObject.Find("Enemy").transform;	
 		if(anim.layerCount ==2)
 			anim.SetLayerWeight(1, 1);
+		startingColliderHeight = col.height;
+		startingColliderY = col.center.y;
 	}
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -122,10 +127,7 @@ public class BotControlScript : Photon.MonoBehaviour
 			// LOOK AT ENEMY
 
 			// if we hold Alt..
-			if (Input.GetButton("Fire2"))
-			{
-				netLookAtEnemy = true;
-			}
+			netLookAtEnemy = Input.GetButton("Fire2");
 
 			// STANDARD JUMPING
 
@@ -145,8 +147,8 @@ public class BotControlScript : Photon.MonoBehaviour
 				if (!anim.IsInTransition(0))
 				{
 					if (useCurves)
-						// ..set the collider height to a float curve in the clip called ColliderHeight
-						col.height = anim.GetFloat("ColliderHeight");
+						// ..multiply the collider height with a float curve in the clip called ColliderHeight
+						col.height = startingColliderHeight * anim.GetFloat("ColliderHeight");
 
 					// reset the Jump bool so we can jump again, and so that the state does not loop 
 					netJump = false;
@@ -161,14 +163,12 @@ public class BotControlScript : Photon.MonoBehaviour
 				if (Input.GetButtonUp("Jump"))
 				{
 					netWave = true;
-					//anim.SetBool("Wave", true);
 				}
 			}
 			// if we enter the waving state, reset the bool to let us wave again in future
 			if (layer2CurrentState.nameHash == waveState)
 			{
 				netWave = false;
-				//anim.SetBool("Wave", false);
 			}
 		}
 		else
@@ -201,17 +201,18 @@ public class BotControlScript : Photon.MonoBehaviour
 			if (!anim.IsInTransition(0))
 			{
 				if (useCurves)
-					// ..set the collider height to a float curve in the clip called ColliderHeight
-					col.height = anim.GetFloat("ColliderHeight");
+					// ..multiply the collider height with a float curve in the clip called ColliderHeight
+					col.height = startingColliderHeight * anim.GetFloat("ColliderHeight");
 			}
 		}
 		// JUMP DOWN AND ROLL 
 
-		// if we are jumping down, set our Collider's Y position to the float curve from the animation clip - 
+		// if we are jumping down, multiply our Collider's starting Y position with the float curve from the animation clip - 
 		// this is a slight lowering so that the collider hits the floor as the character extends his legs
 		else if (currentBaseState.nameHash == jumpDownState)
 		{
-			col.center = new Vector3(0, anim.GetFloat("ColliderY"), 0);
+			if (useCurves)
+				col.center = new Vector3(0, startingColliderY * anim.GetFloat("ColliderY"), 0);
 		}
 
 		// if we are falling, set our Grounded boolean to true when our character's root 
@@ -219,7 +220,8 @@ public class BotControlScript : Photon.MonoBehaviour
 		// we then set the Collider's Height equal to the float curve from the animation clip
 		else if (currentBaseState.nameHash == fallState)
 		{
-			col.height = anim.GetFloat("ColliderHeight");
+			if (useCurves)
+				col.height = startingColliderHeight * anim.GetFloat("ColliderHeight");
 		}
 
 		// if we are in the roll state and not in transition, set Collider Height to the float curve from the animation clip 
@@ -231,10 +233,10 @@ public class BotControlScript : Photon.MonoBehaviour
 			if (!anim.IsInTransition(0))
 			{
 				if (useCurves)
-					col.height = anim.GetFloat("ColliderHeight");
-
-				col.center = new Vector3(0, anim.GetFloat("ColliderY"), 0);
-
+				{
+					col.height = startingColliderHeight * anim.GetFloat("ColliderHeight");
+					col.center = new Vector3(0, startingColliderY * anim.GetFloat("ColliderY"), 0);
+				}
 			}
 		}
 

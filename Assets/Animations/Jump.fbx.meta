@@ -518,37 +518,37 @@ ModelImporter:
           serializedVersion: 2
           curve:
           - time: 0
-            value: 2
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .210613534
-            value: 2
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .383084536
-            value: 1
+            value: .5
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .49585408
-            value: 1
+            value: .5
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .676616907
-            value: 2
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .764150977
-            value: 2
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: 1
-            value: 2
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0

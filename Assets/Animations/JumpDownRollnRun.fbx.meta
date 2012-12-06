@@ -476,6 +476,7 @@ ModelImporter:
     7400000: Fall
     7400002: JumpDown
     7400004: Roll
+    7400006: Fall_NO_MOVE
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -623,27 +624,111 @@ ModelImporter:
           serializedVersion: 2
           curve:
           - time: 0
-            value: 2
+            value: .5
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .074750714
-            value: 1
+            value: .5
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .39867118
-            value: 1
+            value: .5
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: .817275643
-            value: 2
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: 1
-            value: 2
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
+      - name: ColliderY
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: .449999988
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .0765391216
+            value: .449999988
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .392678976
+            value: .449999988
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .825291336
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
+      skeletonMaskElements: []
+    - name: Fall_NO_MOVE
+      takeName: Run_JumpDownHigh_Roll_Run
+      firstFrame: 197.899994
+      lastFrame: 204.199997
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: ColliderHeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: .5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .074750714
+            value: .5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .39867118
+            value: .5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .817275643
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 1
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
