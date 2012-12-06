@@ -47,6 +47,7 @@ public class Chat : Photon.MonoBehaviour
                         Event.current.Use();
                         keyIntercepted = true;
                         skipNextKeyEvent = true;
+						chatActive = false;
                     }
                     else if (Event.current.keyCode == KeyCode.Escape)
                     {
@@ -57,7 +58,7 @@ public class Chat : Photon.MonoBehaviour
                 }
                 else
                 {
-                    if (Event.current.keyCode == KeyCode.T)
+					if (Event.current.keyCode == KeyCode.T || Event.current.keyCode == KeyCode.Return)
                     {
                         chatActive = true;
                         displayChatHint = false;
