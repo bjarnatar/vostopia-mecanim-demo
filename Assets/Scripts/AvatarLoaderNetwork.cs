@@ -26,6 +26,24 @@ public class AvatarLoaderNetwork : Photon.MonoBehaviour
 	{
 		if (!haveAskedToLoadAvatar && !avatarUserId.Equals(""))
 		{
+			GameObject levelLogicObject = GameObject.Find("LevelLogic");
+			if (levelLogicObject)
+			{
+				LevelLogic levelLogic = levelLogicObject.GetComponent<LevelLogic>();
+				if (levelLogic)
+				{
+					Transform targetTransform = levelLogic.GetPlayerSpawningPosition();
+					transform.position = targetTransform.position;
+					transform.rotation = targetTransform.rotation;
+
+					ThirdPersonCamera tpCamera = Camera.main.GetComponent<ThirdPersonCamera>();
+					if (tpCamera)
+						tpCamera.HardSetPosition();
+
+					Debug.Log("Pos: " + transform.position + ", Rot: " + transform.rotation);
+				}
+			}
+			
 			Debug.Log("Loading Avatar: " + avatarUserId);
 			mLoaderUserId.UserId = avatarUserId;
 			mLoaderUserId.LoadAvatar();

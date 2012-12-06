@@ -7,11 +7,23 @@ public class LevelLogic : Photon.MonoBehaviour
     public string MenuSceneName;
 
     public GUISkin GUISkin=null;
+	public Transform[] playerSpawnLocations;
 
     private GameObject mPlayer;
 
     private const int messageWidth = 500;
     private const int messageHeight = 60;
+
+
+	public Transform GetPlayerSpawningPosition()
+	{
+		if (playerSpawnLocations.Length == 0)
+			return transform;
+
+		int spIndex = Random.Range(0, playerSpawnLocations.Length);
+		Debug.Log("Returning index: " + spIndex);
+		return (playerSpawnLocations[spIndex].transform);
+	}
 
 	// Use this for initialization
 	void Awake () 

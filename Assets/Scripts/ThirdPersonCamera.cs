@@ -7,6 +7,12 @@ public class ThirdPersonCamera : MonoBehaviour
 	Transform standardPos;			// the usual position for the camera, specified by a transform in the game
 	Transform lookAtPos;			// the position to move the camera to when using head look
 	
+	public void HardSetPosition()
+	{
+		transform.position = standardPos.position;
+		transform.forward = standardPos.forward;
+	}
+	
 	void Start()
 	{
 		// initialising references
