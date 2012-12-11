@@ -52,9 +52,10 @@ public class BotControlScript : Photon.MonoBehaviour
 		// initialising reference variables
 		anim = GetComponent<Animator>();					  
 		col = GetComponent<CapsuleCollider>();				
-		enemy = GameObject.Find("Enemy").transform;	
-		if(anim.layerCount ==2)
+		enemy = GameObject.Find("Enemy").transform;
+		if (anim.layerCount >= 2)
 			anim.SetLayerWeight(1, 1);
+		Debug.Log("Anim layer count: " + anim.layerCount);
 		startingColliderHeight = col.height;
 		startingColliderY = col.center.y;
 	}
@@ -174,6 +175,11 @@ public class BotControlScript : Photon.MonoBehaviour
 		else
 		{ // Set anim variables based on network updates
 
+		}
+
+		if (netWave && anim.layerCount >= 2)
+		{
+			anim.SetLayerWeight(1, 1);
 		}
 
 		anim.SetFloat("Direction", netDirection); 			// set our animator's float parameter 'Direction' equal to the horizontal input axis		
