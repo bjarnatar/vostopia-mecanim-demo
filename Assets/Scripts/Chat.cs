@@ -83,7 +83,7 @@ public class Chat : Photon.MonoBehaviour
                     //Show scroll list of chat messages
                     scrollPos = GUILayout.BeginScrollView(scrollPos);
                     {
-                        GUI.color = Color.black;
+                        GUI.color = Color.yellow;
                         for (int i = messages.Count - 1; i >= 0; i--)
                         {
                             GUILayout.Label(messages[i]);

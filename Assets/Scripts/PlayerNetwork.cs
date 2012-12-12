@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlayerNetwork : Photon.MonoBehaviour
 {
-    BotControlScript controllerScript;
+//    BotControlScript controllerScript;
 
     void Awake()
     {
-        controllerScript = GetComponent<BotControlScript>();
+//        controllerScript = GetComponent<BotControlScript>();
 
     }
     void Start()

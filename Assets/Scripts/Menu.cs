@@ -5,6 +5,7 @@ public class Menu : Photon.MonoBehaviour {
 
     public string[] levelNames;
     public GUISkin GUISkin;
+	public int mMaxPlayersInRoom = 8;
 
     private Vector2 mRoomListScrollPosition;
     private int mSelectedRoomIndex = 0;
@@ -60,10 +61,13 @@ public class Menu : Photon.MonoBehaviour {
             case MenuState.ConnectingToPhoton:
                 UpdateConnectingToPhoton();
                 break;
+			case MenuState.CreateNewRoom:
+				UpdateCreateNewRoom();
+				break;
         }
 	
 	}
-
+	
     private void OnGUI()
     {
 
@@ -83,7 +87,10 @@ public class Menu : Photon.MonoBehaviour {
                     OnGUIDisplayRooms();
                     break;
                 case MenuState.CreateNewRoom:
-                    OnGUICreateNewRoom();
+					if (levelNames.Length > 1)
+					{
+	                    OnGUICreateNewRoom();
+					}
                     break;
                 case MenuState.ConnectingToRoom:
                     OnGUIConnectingToRoom();
@@ -135,16 +142,12 @@ public class Menu : Photon.MonoBehaviour {
 
     }
 
-
-
-
-
     private void OnGUIDisplayRooms()
     {
         GUILayout.BeginArea(new Rect((Screen.width - menuWidth) / 2, (Screen.height - menuHeight) / 2, menuWidth, menuHeight), GUI.skin.box);
         {
 
-            GUILayout.Label(string.Format("Select a level to Join"), GUI.skin.FindStyle("header"));
+            GUILayout.Label(string.Format("Select a room to Join"), GUI.skin.FindStyle("header"));
 
             mSelectedRoom = null;
 
@@ -166,7 +169,7 @@ public class Menu : Photon.MonoBehaviour {
                         {
 							mSelectedRoom = room;
                             mSelectedRoomIndex = i;
-							Debug.Log("Selected room name: " + mSelectedRoom.name + ", index: " + mSelectedRoomIndex);
+							//Debug.Log("Selected room name: " + mSelectedRoom.name + ", index: " + mSelectedRoomIndex);
                         }
                     }
                 }
@@ -192,6 +195,18 @@ public class Menu : Photon.MonoBehaviour {
         }
         GUILayout.EndArea();
     }
+	
+	void UpdateCreateNewRoom()
+	{
+		// If there is only one level in the list, choose it and move on
+		if (levelNames.Length == 1)
+		{
+			mSelectedLevelIndex = 0;
+			mSelectedLevelName = levelNames[0];
+			DoCreateNewRoom(mSelectedLevelName);
+		}
+	}
+	
     private void OnGUICreateNewRoom()
     {
         GUILayout.BeginArea(new Rect((Screen.width - menuWidth) / 2, (Screen.height - menuHeight) / 2, menuWidth, menuHeight), GUI.skin.box);
@@ -275,17 +290,31 @@ public class Menu : Photon.MonoBehaviour {
     private void DoCreateNewRoom(string levelName)
     {
         Debug.Log("calling CreateRoom");
-        PhotonNetwork.CreateRoom(levelName);
+		
+		//string displayName = levelName + "-" + VostopiaClient.Authentication.ActiveUser.DisplayName;
+		//string displayName = GetUniqueRoomName(levelName, VostopiaClient.Authentication.ActiveUser.DisplayName);
+		string displayName = levelName + "-" + VostopiaClient.Authentication.ActiveUser.DisplayName + "-" + Random.Range(0, 9999).ToString();
+		
+		Hashtable customRoomPropertiesToSet = new Hashtable();
+		customRoomPropertiesToSet.Add("levelName", levelName);
+		customRoomPropertiesToSet.Add("creator", VostopiaClient.Authentication.ActiveUser.DisplayName);
+		string[] customPropertiesForLobby = new string[2];
+		customPropertiesForLobby[0] = "levelName";
+		customPropertiesForLobby[1] = "creator";
+		
+		
+        PhotonNetwork.CreateRoom(displayName, true, true, mMaxPlayersInRoom, customRoomPropertiesToSet, customPropertiesForLobby);
         Debug.Log("called CreateRoom");
         mMenuState = MenuState.ConnectingToRoom;
     }
-
+	
     private void DoJoinRoom(RoomInfo room)
     {
-        mSelectedLevelName = room.name;
-        Debug.Log("calling CreateRoom");
+        //mSelectedLevelName = room.name;
+		mSelectedLevelName = room.customProperties["levelName"].ToString();
+        Debug.Log("calling JoinRoom");
         PhotonNetwork.JoinRoom(room.name);
-        Debug.Log("called CreateRoom");
+        Debug.Log("called JoinRoom");
 
         mMenuState = MenuState.ConnectingToRoom;
     }
