@@ -1,6 +1,13 @@
 #Ignore vostopia api settings
 /Assets/VostopiaSettings
 /Assets/VostopiaSettings.meta
+/Assets/AssetStoreTools
+/Assets/AssetStoreTools.meta
+
+vpmdemo.userprefs
+
+*.swp
+.DS_Store
 
 #Ignore everything from Library except the few files
 #defined on http://unity3d.com/support/documentation/Manual/ExternalVersionControlSystemSupport.html
